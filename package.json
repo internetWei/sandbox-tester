@@ -1,0 +1,37 @@
+{
+  "name": "sandbox-tester",
+  "version": "1.0.0",
+  "description": "App Store Connect 沙盒测试账号一键自动创建工具（macOS）",
+  "bin": {
+    "sandbox-tester": "./sandbox-tester"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/internetwei/sandbox-tester.git"
+  },
+  "homepage": "https://github.com/internetwei/sandbox-tester#readme",
+  "bugs": {
+    "url": "https://github.com/internetwei/sandbox-tester/issues"
+  },
+  "license": "MIT",
+  "author": "budo <internetwei@foxmail.com>",
+  "keywords": [
+    "apple",
+    "app-store-connect",
+    "asc",
+    "sandbox-tester",
+    "ios",
+    "iap",
+    "in-app-purchase",
+    "macos",
+    "playwright",
+    "automation"
+  ],
+  "os": ["darwin"],
+  "engines": {
+    "node": ">=14"
+  },
+  "dependencies": {
+    "playwright": "^1.48.0"
+  }
+}

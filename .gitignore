@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log
+yarn-debug.log*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 脚本运行时数据（理论上应该在 ~/.local/state/sandbox-tester/，但万一有人放仓库里要挡）
+playwright-state/
+.playwright-state/
+storage-state.json
+last-email.json
+last-email.txt
+password.txt
+regions.json
+browser-channel.txt
+
+# 调试产物
+/tmp/sandbox-*.png

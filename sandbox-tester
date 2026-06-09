@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# 沙盒账号自动创建脚本入口
+# 用法: ./sandbox-tester [数量] [-e EMAIL] [-p PASSWORD] [-t TERRITORY]
+# 脚本本体可放任意位置（含 git/同步目录）；依赖与登录态统一落在
+# ~/.local/state/sandbox-tester，不随脚本进入版本库/同步盘
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+STATE_DIR="$HOME/.local/state/sandbox-tester"
+mkdir -p "$STATE_DIR"
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "❌ 未检测到 Node.js，请先安装：brew install node" >&2
+  exit 1
+fi
+
+if [ ! -d "/Applications/Google Chrome.app" ] && [ ! -d "/Applications/Microsoft Edge.app" ]; then
+  echo "❌ 未检测到 Chrome 或 Edge，请安装其中一个（脚本不支持 Safari，因 Playwright 不支持驱动 Safari）" >&2
+  exit 1
+fi
+
+# 依赖装在 STATE_DIR（不进脚本所在的同步/版本目录），用 NODE_PATH 让脚本找到
+if [ ! -d "$STATE_DIR/node_modules/playwright" ]; then
+  echo "首次运行，安装依赖（约 30 秒）..."
+  cp "$SCRIPT_DIR/package.json" "$STATE_DIR/package.json"
+  (cd "$STATE_DIR" && npm install --silent)
+fi
+
+exec env NODE_PATH="$STATE_DIR/node_modules" node "$SCRIPT_DIR/sandbox-tester.js" "$@"
