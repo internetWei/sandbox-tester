@@ -146,7 +146,7 @@ function printHelp() {
 沙盒测试账号自动创建工具
 
 用法:
-  ./sandbox-tester [数量] [-e EMAIL] [-p PASSWORD] [-r 地区...] [-n N]
+  sandbox-tester [数量] [-e EMAIL] [-p PASSWORD] [-r 地区...] [-n N]
 
 参数:
   数量                   要创建几个账号，裸数字直接传，等价于 -n      (默认: 1)
@@ -162,12 +162,12 @@ function printHelp() {
   -v, --version         显示版本号
 
 示例:
-  ./sandbox-tester                       从上次成功邮箱 +1 建 1 个（美国）
-  ./sandbox-tester 3                     连续建 3 个（都美国）
-  ./sandbox-tester 3 -r CHN USA JPN      建 3 个，地区分别 中国/美国/日本
-  ./sandbox-tester -r CHN USA JPN        同上（数量自动取地区数）
-  ./sandbox-tester 3 -r CHN              建 3 个，第 1 个中国其余美国
-  ./sandbox-tester -e wxyz2000@test.com  指定起始邮箱建 1 个
+  sandbox-tester                       从上次成功邮箱 +1 建 1 个（美国）
+  sandbox-tester 3                     连续建 3 个（都美国）
+  sandbox-tester 3 -r CHN USA JPN      建 3 个，地区分别 中国/美国/日本
+  sandbox-tester -r CHN USA JPN        同上（数量自动取地区数）
+  sandbox-tester 3 -r CHN              建 3 个，第 1 个中国其余美国
+  sandbox-tester -e wxyz2000@test.com  指定起始邮箱建 1 个
 
 地区代码:
 ${regionLines.join('\n')}
