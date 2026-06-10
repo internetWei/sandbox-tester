@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "App Store Connect 沙盒测试账号一键自动创建工具（macOS）",
   "bin": {
-    "sandbox-tester": "./sandbox-tester"
+    "sandbox-tester": "sandbox-tester"
   },
   "repository": {
     "type": "git",
@@ -27,10 +27,18 @@
     "playwright",
     "automation"
   ],
-  "os": ["darwin"],
+  "os": [
+    "darwin"
+  ],
   "engines": {
     "node": ">=14"
   },
+  "files": [
+    "sandbox-tester",
+    "sandbox-tester.js",
+    "README.md",
+    "LICENSE"
+  ],
   "dependencies": {
     "playwright": "^1.48.0"
   }
