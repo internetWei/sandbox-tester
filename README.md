@@ -1,5 +1,10 @@
 # sandbox-tester
 
+[![npm version](https://img.shields.io/npm/v/sandbox-tester.svg)](https://www.npmjs.com/package/sandbox-tester)
+[![License: MIT](https://img.shields.io/npm/l/sandbox-tester.svg)](./LICENSE)
+[![Node](https://img.shields.io/node/v/sandbox-tester.svg)](https://nodejs.org)
+[![Platform](https://img.shields.io/badge/platform-macOS-blue.svg)](https://www.apple.com/macos)
+
 一行命令在 App Store Connect 自动创建 iOS 沙盒测试账号，告别手动建号。
 
 ```bash
@@ -31,7 +36,20 @@ sandbox-tester -r CHN USA JPN
 
 ## 📦 安装
 
-### 方式 1：git clone
+### 方式 1（推荐）：npm
+
+```bash
+npm install -g sandbox-tester
+sandbox-tester -h
+```
+
+| 操作 | 命令 |
+|---|---|
+| 升级到最新版 | `npm update -g sandbox-tester` |
+| 查看当前版本 | `sandbox-tester --version` |
+| 卸载 | `npm uninstall -g sandbox-tester` |
+
+### 方式 2：git clone（适合二次开发）
 
 ```bash
 git clone https://github.com/internetwei/sandbox-tester.git ~/sandbox-tester
@@ -39,8 +57,9 @@ git clone https://github.com/internetwei/sandbox-tester.git ~/sandbox-tester
 ```
 
 把 `~/sandbox-tester` 加进 `PATH`，或在 `~/bin/` 下做个软链，就能在任意目录直接敲 `sandbox-tester` 调用。
+首次运行会自动把 playwright 依赖装到 `~/.local/state/sandbox-tester/`（避免污染 git/同步盘）。
 
-### 方式 2：tarball 解压
+### 方式 3：tarball 解压
 
 ```bash
 curl -L https://github.com/internetwei/sandbox-tester/archive/refs/heads/main.tar.gz | tar xz
@@ -75,7 +94,7 @@ $ sandbox-tester
   提交 ...
 
 ✅ 成功创建 1/1 个沙盒账号:
-   xxx1001@test.com  |  InShot123  |  USA(美国)
+   xxx1001@test.com  |  WxYz123098  |  USA(美国)
 📋 账号信息已复制到剪贴板
 ```
 
